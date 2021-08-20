@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG-Music</title>
+    <link rel="shortcut icon" type="image/png" href="./images/tabimg.png">
+    <link rel="stylesheet" href="./bgstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="./images/tabimg.png" alt="logo" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>MUSIC<br>to my<br>EARS</h1>
+            </div>
+            <div class="right-col">
+                <p>Click Here To Listen<br>
+                <text style="font-size:20px;">Sound On !</text> 
+                <text style="font-size:10px;">Use Headphones For Better Effect !</text></p>
+                <img src="./images/play.png" id="playIcon">
+            </div>
+        </div>
+    </div>
+    <audio id="song" loop>
+        <source src="./images/tokyo_drift_remix_gmv_aac_63217.m4a" type="audio/mp3">
+    </audio>
+    <script>
+        var song = document.getElementById("song");
+        var playIcon = document.getElementById("playIcon");
+        playIcon.onclick = function() {
+            if(song.paused) {
+                song.play();
+                playIcon.src = "./images/pause.png";
+            }
+            else {
+                song.pause();
+                playIcon.src = "./images/play.png";
+            }
+        }
+    </script>
+</body>
+</html>
